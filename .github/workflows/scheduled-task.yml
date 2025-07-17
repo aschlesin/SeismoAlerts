@@ -6,7 +6,7 @@ name: Run Python Script Daily
 on:
   schedule:
     # Runs at 5:30 UTC every day. The format is standard cron syntax.
-    - cron: '30 5 * * *'
+    - cron: '55 22 * * *'
 
 jobs:
   build:
