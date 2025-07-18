@@ -1,6 +1,6 @@
 # .github/workflows/scheduled-task.yml
 
-name: Run main.py
+name: run main.py
 
 # This trigger starts the workflow on a schedule
 on:
