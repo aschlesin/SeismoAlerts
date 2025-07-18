@@ -33,9 +33,9 @@ jobs:
       # Step 4: Run your script
       - name: Execute Python script
         env:
-          SENDER_PASSWD: ${{ secrets.UVIC_PASSWD }}
-          SENDER_EMAIL: ${{ secrets.SENDER }}
-          RECEIVER_EMAIL: ${{ secrets.UVIC_EMAIL }}
+          sender_password: ${{ secrets.UVIC_PASSWD }}
+          sender_email: ${{ secrets.SENDER }}
+          receiver_email: ${{ secrets.UVIC_EMAIL }}
         run: python main.py
         
       # Step 5: commit files
