@@ -81,40 +81,30 @@ def KEMF_LED_Alert():
         quality_metric = np.mean((psd-psd_bad)[freq <= cut_off_freq])
         print(quality_metric)
 
+        if quality_metric <= 500:
         # setup email
 
-        sender_email = os.getenv("SENDER")
-        receiver_email = os.getenv("UVIC_EMAIL")
-        sender_password = os.getenv("UVIC_PASSWD") # Use environment variables or secure methods for production
-        subject = "Check email for KEMF SPS"
+            sender_email = os.getenv("SENDER")
+            receiver_email = os.getenv("UVIC_EMAIL")
+            sender_password = os.getenv("UVIC_PASSWD") # Use environment variables or secure methods for production
+            subject = "Check email for KEMF SPS"
+            body = f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500."
+            em = EmailMessage()
+            em['From'] = sender_email
+            em['To'] = receiver_email
+            em['subject'] = subject
 
-        quality_metric = 990
-
-        if quality_metric <= 500:
-                    body = f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500."
-                    #print(f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500.")
-                    
-        else:
-                    body =  f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500." 
-                    #print(f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500.")
-        print(body)
-
-        em = EmailMessage()
-        em['From'] = sender_email
-        em['To'] = receiver_email
-        em['subject'] = subject
-
-        em.set_content(body)
-        context = ssl.create_default_context()
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
+            em.set_content(body)
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as smtp:
                         smtp.login(sender_email,sender_password)
                         smtp.sendmail(sender_email,receiver_email,em.as_string())
+            return(f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500.")
 
-        if quality_metric <= 500:
-                    return(f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500.")
-                    
         else:
-                    return(f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500.")
+            print(f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500.")
+       
+            return(f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500.")
         
 try:
         
