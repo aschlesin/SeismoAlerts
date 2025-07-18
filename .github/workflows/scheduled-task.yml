@@ -32,6 +32,10 @@ jobs:
 
       # Step 4: Run your script
       - name: Execute Python script
+        env:
+          SENDER_PASSWD: ${{ secrets.SENDER_PASSWD }}
+          SENDER_EMAIL: schlesin.angela@gmail.com
+          RECEIVER_EMAIL: schlesin@uvic.ca
         run: python main.py
         
       # Step 5: commit files
