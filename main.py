@@ -80,7 +80,7 @@ def KEMF_LED_Alert():
         cut_off_freq = 1.3 # 20
         quality_metric = np.mean((psd-psd_bad)[freq <= cut_off_freq])
         print(quality_metric)
-
+        quality_metric = 300
         if quality_metric <= 500:
         # setup email
 
