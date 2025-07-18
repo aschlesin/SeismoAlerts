@@ -110,7 +110,12 @@ def KEMF_LED_Alert():
                         smtp.login(sender_email,sender_password)
                         smtp.sendmail(sender_email,receiver_email,em.as_string())
 
-
+        if quality_metric <= 500:
+                    return(f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500.")
+                    
+        else:
+                    return(f"KEMF is probably OK, because quality metric ({quality_metric}) is (hopefully way) above 500.")
+        
 try:
         
         SOME_SECRET = KEMF_LED_Alert()
