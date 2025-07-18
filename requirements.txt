@@ -2,3 +2,6 @@ obspy
 scipy
 numpy
 logging
+dotenv
+smtplib
+ssl
