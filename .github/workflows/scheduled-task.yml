@@ -1,12 +1,12 @@
 # .github/workflows/scheduled-task.yml
 
-name: Run Python Script Daily
+name: Run main.py
 
 # This trigger starts the workflow on a schedule
 on:
   schedule:
     # Runs at 5:30 UTC every day. The format is standard cron syntax.
-    - cron: '55 22 * * *'
+    - cron: '0 /2 * * *'
 
 jobs:
   build:
@@ -32,4 +32,18 @@ jobs:
 
       # Step 4: Run your script
       - name: Execute Python script
-        run: python KEMF_LED_Alert.py
+        run: python main.py
+        
+      # Step 5: commit files
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+      # Step 6: Push changes    
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
