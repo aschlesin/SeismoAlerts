@@ -6,7 +6,7 @@ name: run main.py
 on:
   schedule:
     # Runs at 5:30 UTC every day. The format is standard cron syntax.
-    - cron: '*/5 * * * *' # runs every 5 minutes
+    - cron: '0 */2 * * *' # runs every 2 hours
 
 jobs:
   build:
