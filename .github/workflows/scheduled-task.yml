@@ -7,7 +7,23 @@ on:
   schedule:
     # Runs at 5:30 UTC every day. The format is standard cron syntax.
     - cron: '0 */12 * * *' # runs every 12 hours
-
+    
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: string
 jobs:
   build:
     # The type of virtual machine to run the job on
