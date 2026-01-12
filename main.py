@@ -84,9 +84,10 @@ def KEMF_LED_Alert():
         if quality_metric <= 100000:
         # setup email
 
-            sender_email = $(( secrets.GMAIL_EMAIL }}
-            receiver_email = ${{ secrets.UVIC_EMAIL }}
-            sender_password = ${{ secrets.GMAIL_PASSWD }} # Use environment variables or secure methods for production
+            sender_email = os.getenv("SENDER")
+            receiver_email = os.getenv("UVIC_EMAIL")
+            sender_password = os.getenv("GMAIL_PASSWD") # Use environment variables or secure methods for production
+            
             subject = "Check email for KEMF SPS"
             body = f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric}) is below 500."
             em = EmailMessage()
