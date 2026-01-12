@@ -48,10 +48,10 @@ jobs:
 
       # Step 4: Run your script
       - name: Execute Python script
-        env:
-          SENDER: ${{ secrets.GMAIL_EMAIL }}
-          UVIC_EMAIL: ${{ secrets.UVIC_EMAIL }}
-          GMAIL_PASSWD: ${{ secrets.GMAIL_PASSWD }}
+        #env:
+        #  SENDER: ${{ secrets.GMAIL_EMAIL }}
+        #  UVIC_EMAIL: ${{ secrets.UVIC_EMAIL }}
+        #  GMAIL_PASSWD: ${{ secrets.GMAIL_PASSWD }}
         run: python main.py
         
       # Step 5: commit files
