@@ -82,7 +82,7 @@ def KEMF_LED_Alert():
         quality_metric = np.mean((psd - psd_bad)[freq <= cut_off_freq])
 
         # 3. Decision & Alerting
-        if quality_metric <= 500: # Adjust threshold as needed
+        if quality_metric <= 500000: # Adjust threshold as needed
             sender_email = os.getenv("SENDER")
             receiver_email = os.getenv("UVIC_EMAIL")
             sender_password = os.getenv("GMAIL_PASSWD") 
