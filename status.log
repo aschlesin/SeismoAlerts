@@ -630,3 +630,4 @@ Traceback (most recent call last):
     raise SMTPAuthenticationError(code, resp)
 smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8c37f51bf8csm1596752785a.28 - gsmtp')
 2026-01-13 00:06:20,825 - __main__ - INFO - CRITICAL ERROR: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor af79cd13be357-8c37f51bf8csm1596752785a.28 - gsmtp')
+2026-01-13 00:09:45,878 - __main__ - INFO - ALERT SENT: Quality metric (21115.61) is low.
