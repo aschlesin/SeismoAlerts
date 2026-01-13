@@ -84,8 +84,8 @@ def KEMF_LED_Alert():
         # 3. Decision & Alerting
         if quality_metric <= 500: # Adjust threshold as needed
             sender_email = os.getenv("SENDER")
-            receiver_email = os.getenv("UVIC_EMAIL")
-            sender_password = os.getenv("GMAIL_PASSWD") 
+            receiver_email = os.getenv("RECEIVER")
+            sender_password = os.getenv("SENDER_PASSWD") 
             
             # Check if secrets were loaded
             if not all([sender_email, receiver_email, sender_password]):
