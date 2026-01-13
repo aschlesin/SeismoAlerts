@@ -50,8 +50,8 @@ jobs:
       - name: Execute Python script
         env:
           SENDER: ${{ secrets.SENDER }}
-          UVIC_EMAIL: ${{ secrets.RECEIVER }}
-          GMAIL_PASSWD: ${{ secrets.SENDER_PASSWD }}
+          RECEIVER: ${{ secrets.RECEIVER }}
+          SENDER_PASSWD: ${{ secrets.SENDER_PASSWD }}
         run: python main.py
         
       # Step 5: commit files
