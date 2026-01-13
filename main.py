@@ -89,7 +89,7 @@ def KEMF_LED_Alert():
             
             # Check if secrets were loaded
             if not all([sender_email, receiver_email, sender_password]):
-                missing = [k for k, v in {"SENDER": sender_email, "UVIC_EMAIL": receiver_email, "GMAIL_PASSWD": sender_password}.items() if not v]
+                missing = [k for k, v in {"SENDER": sender_email, "RECEIVER": receiver_email, "SENDER_PASSWD": sender_password}.items() if not v]
                 return f"Error: Missing environment variables: {', '.join(missing)}"
 
             subject = "Check email for KEMF SPS"
