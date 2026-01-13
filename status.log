@@ -604,3 +604,16 @@
 2026-01-12 23:46:33,486 - __main__ - INFO - Script not running!
 2026-01-12 23:50:17,209 - __main__ - INFO - Script not running!
 2026-01-12 23:57:52,464 - __main__ - INFO - STATUS OK: Quality metric (21196.21) is above threshold.
+2026-01-13 00:01:26,405 - __main__ - ERROR - Execution failed: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 5614622812f47-45a5e2b2b20sm8974935b6e.18 - gsmtp')
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 106, in KEMF_LED_Alert
+    smtp.login(sender_email, sender_password)
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/smtplib.py", line 750, in login
+    raise last_exception
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/smtplib.py", line 739, in login
+    (code, resp) = self.auth(
+                   ^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/smtplib.py", line 662, in auth
+    raise SMTPAuthenticationError(code, resp)
+smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 5614622812f47-45a5e2b2b20sm8974935b6e.18 - gsmtp')
+2026-01-13 00:01:26,406 - __main__ - INFO - CRITICAL ERROR: (534, b'5.7.9 Application-specific password required. For more information, go to\n5.7.9  https://support.google.com/mail/?p=InvalidSecondFactor 5614622812f47-45a5e2b2b20sm8974935b6e.18 - gsmtp')
