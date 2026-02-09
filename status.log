@@ -689,3 +689,18 @@ smtplib.SMTPAuthenticationError: (534, b'5.7.9 Application-specific password req
 2026-02-07 12:39:53,444 - __main__ - INFO - STATUS OK: Quality metric (23589.08) is above threshold.
 2026-02-08 02:11:15,871 - __main__ - INFO - STATUS OK: Quality metric (19063.37) is above threshold.
 2026-02-08 12:41:13,755 - __main__ - INFO - STATUS OK: Quality metric (11744.14) is above threshold.
+2026-02-09 01:57:47,349 - __main__ - ERROR - Execution failed: 'TimeoutError' object has no attribute 'splitlines'
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 872, in get_waveforms
+    data_stream = self._download(url, use_gzip=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1486, in _download
+    raise_on_error(code, data)
+  File "/opt/hostedtoolcache/Python/3.11.14/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1831, in raise_on_error
+    line for line in server_info.splitlines() if line)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TimeoutError' object has no attribute 'splitlines'
+2026-02-09 01:57:47,350 - __main__ - INFO - CRITICAL ERROR: 'TimeoutError' object has no attribute 'splitlines'
