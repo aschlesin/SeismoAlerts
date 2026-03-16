@@ -82,7 +82,7 @@ def KEMF_LED_Alert():
         quality_metric = np.mean((psd - psd_bad)[freq <= cut_off_freq])
 
         # 3. Decision & Alerting
-        if quality_metric > 500: # Adjust threshold as needed
+        if quality_metric <= 500 or quality_metric > 100000: # Adjust threshold as needed
             sender_email = os.getenv("SENDER")
             receiver_email = os.getenv("RECEIVER")
             sender_password = os.getenv("SENDER_PASSWD") 
@@ -93,7 +93,7 @@ def KEMF_LED_Alert():
                 return f"Error: Missing environment variables: {', '.join(missing)}"
 
             subject = "Check email for KEMF SPS"
-            body = f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric:.2f}) is below 500."
+            body = f"Do something!!! KEMF LED is probably ON, because quality metric ({quality_metric:.2f}) is outside the normal range."
             
             em = EmailMessage()
             em['From'] = sender_email
