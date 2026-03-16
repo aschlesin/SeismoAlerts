@@ -109,7 +109,7 @@ def KEMF_LED_Alert():
             return f"ALERT SENT: Quality metric ({quality_metric:.2f}) is low."
 
         else:
-            return f"STATUS OK: Quality metric ({quality_metric:.2f}) is above threshold."
+            return f"STATUS OK: Quality metric ({quality_metric:.2f}) is within acceptable range threshold."
 
     except Exception as e:
         # Catching specific errors would be better, but this ensures we log ANY failure
