@@ -857,3 +857,28 @@ Detailed response of server:
 2026-04-12 12:54:22,967 - __main__ - INFO - STATUS OK: Quality metric (5633.80) is within acceptable range threshold.
 2026-04-13 02:23:40,166 - __main__ - INFO - STATUS OK: Quality metric (5518.28) is within acceptable range threshold.
 2026-04-13 13:18:49,636 - __main__ - INFO - STATUS OK: Quality metric (73616.80) is within acceptable range threshold.
+2026-04-14 02:09:32,157 - __main__ - ERROR - Execution failed: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 872, in get_waveforms
+    data_stream = self._download(url, use_gzip=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1486, in _download
+    raise_on_error(code, data)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1834, in raise_on_error
+    raise FDSNNoDataException("No data available for request.",
+obspy.clients.fdsn.header.FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+2026-04-14 02:09:32,158 - __main__ - INFO - CRITICAL ERROR: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
