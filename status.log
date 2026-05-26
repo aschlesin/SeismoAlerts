@@ -1120,3 +1120,28 @@ NotImplementedError: Trace with masked values found. This is not supported for t
 2026-05-24 13:17:52,695 - __main__ - INFO - STATUS OK: Quality metric (4627.93) is within acceptable range threshold.
 2026-05-25 03:27:42,920 - __main__ - INFO - STATUS OK: Quality metric (13085.66) is within acceptable range threshold.
 2026-05-25 14:47:03,974 - __main__ - INFO - STATUS OK: Quality metric (22003.12) is within acceptable range threshold.
+2026-05-26 02:48:13,016 - __main__ - ERROR - Execution failed: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 872, in get_waveforms
+    data_stream = self._download(url, use_gzip=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1486, in _download
+    raise_on_error(code, data)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1834, in raise_on_error
+    raise FDSNNoDataException("No data available for request.",
+obspy.clients.fdsn.header.FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+2026-05-26 02:48:13,017 - __main__ - INFO - CRITICAL ERROR: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
