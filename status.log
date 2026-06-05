@@ -1173,3 +1173,12 @@ Traceback (most recent call last):
 ValueError: The current client does not have a dataselect service.
 2026-06-04 14:50:30,854 - __main__ - INFO - CRITICAL ERROR: The current client does not have a dataselect service.
 2026-06-05 03:24:47,444 - __main__ - INFO - STATUS OK: Quality metric (4592.65) is within acceptable range threshold.
+2026-06-05 14:41:18,541 - __main__ - ERROR - Execution failed: The current client does not have a dataselect service.
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 858, in get_waveforms
+    raise ValueError(msg)
+ValueError: The current client does not have a dataselect service.
+2026-06-05 14:41:18,542 - __main__ - INFO - CRITICAL ERROR: The current client does not have a dataselect service.
