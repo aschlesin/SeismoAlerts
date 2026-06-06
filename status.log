@@ -1183,3 +1183,4 @@ Traceback (most recent call last):
 ValueError: The current client does not have a dataselect service.
 2026-06-05 14:41:18,542 - __main__ - INFO - CRITICAL ERROR: The current client does not have a dataselect service.
 2026-06-06 02:47:06,133 - __main__ - INFO - STATUS OK: Quality metric (8168.17) is within acceptable range threshold.
+2026-06-06 13:23:50,469 - __main__ - INFO - STATUS OK: Quality metric (10892.84) is within acceptable range threshold.
