@@ -1209,3 +1209,4 @@ ValueError: The current client does not have a dataselect service.
 2026-06-18 03:33:01,499 - __main__ - INFO - STATUS OK: Quality metric (10631.46) is within acceptable range threshold.
 2026-06-18 14:58:38,003 - __main__ - INFO - ALERT SENT: Quality metric (32145781532.94) is low.
 2026-06-19 03:55:06,054 - __main__ - INFO - ALERT SENT: Quality metric (17100858129.00) is low.
+2026-06-19 14:56:11,500 - __main__ - INFO - ALERT SENT: Quality metric (3406000155.39) is low.
