@@ -1268,3 +1268,28 @@ AttributeError: 'TimeoutError' object has no attribute 'splitlines'
 2026-07-10 14:13:02,123 - __main__ - INFO - STATUS OK: Quality metric (1336.58) is within acceptable range threshold.
 2026-07-11 02:12:45,159 - __main__ - INFO - STATUS OK: Quality metric (838.78) is within acceptable range threshold.
 2026-07-11 13:09:17,990 - __main__ - INFO - STATUS OK: Quality metric (2303.36) is within acceptable range threshold.
+2026-07-12 02:23:22,929 - __main__ - ERROR - Execution failed: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 872, in get_waveforms
+    data_stream = self._download(url, use_gzip=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1486, in _download
+    raise_on_error(code, data)
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1834, in raise_on_error
+    raise FDSNNoDataException("No data available for request.",
+obspy.clients.fdsn.header.FDSNNoDataException: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
+2026-07-12 02:23:22,930 - __main__ - INFO - CRITICAL ERROR: No data available for request.
+HTTP Status code: 204
+Detailed response of server:
+
+
