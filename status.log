@@ -1295,3 +1295,4 @@ Detailed response of server:
 
 2026-07-12 13:11:04,081 - __main__ - INFO - STATUS OK: Quality metric (2118.34) is within acceptable range threshold.
 2026-07-13 02:24:55,158 - __main__ - INFO - STATUS OK: Quality metric (623.79) is within acceptable range threshold.
+2026-07-13 14:24:49,189 - __main__ - INFO - ALERT SENT: Quality metric (345.25) is low.
