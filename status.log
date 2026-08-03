@@ -1337,3 +1337,4 @@ Detailed response of server:
 2026-08-01 13:09:37,495 - __main__ - INFO - STATUS OK: Quality metric (8690.00) is within acceptable range threshold.
 2026-08-02 02:23:59,673 - __main__ - INFO - STATUS OK: Quality metric (4796.66) is within acceptable range threshold.
 2026-08-02 13:11:31,261 - __main__ - INFO - STATUS OK: Quality metric (3955.03) is within acceptable range threshold.
+2026-08-03 02:26:32,115 - __main__ - INFO - ALERT SENT: Quality metric (826710.06) is low.
