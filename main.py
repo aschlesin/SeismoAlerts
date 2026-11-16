@@ -27,7 +27,7 @@ logger_file_handler.setFormatter(formatter)
 logger.addHandler(logger_file_handler)
 
 def KEMF_LED_Alert():
-    """Processes seismic data and sends an email if the quality metric is low."""
+    """Processes seismic data and sends an email if the quality metric is outside of acceptable range."""
     try:
         # 1. Fetch Data
         client = Client("IRIS")
@@ -106,7 +106,7 @@ def KEMF_LED_Alert():
                 smtp.login(sender_email, sender_password)
                 smtp.send_message(em)
             
-            return f"ALERT SENT: Quality metric ({quality_metric:.2f}) is low."
+            return f"ALERT SENT: Quality metric ({quality_metric:.2f}) is is outside the normal range."
 
         else:
             return f"STATUS OK: Quality metric ({quality_metric:.2f}) is within acceptable range threshold."
