@@ -1587,3 +1587,4 @@ Detailed response of server:
 2026-11-15 18:26:14,395 - __main__ - INFO - ALERT SENT: Quality metric (2432679.54) is low.
 2026-11-16 04:32:35,284 - __main__ - INFO - ALERT SENT: Quality metric (21732732.04) is low.
 2026-11-16 21:34:18,158 - __main__ - INFO - ALERT SENT: Quality metric (550562.10) is low.
+2026-11-17 06:18:07,629 - __main__ - INFO - ALERT SENT: Quality metric (948200.46) is is outside the normal range.
