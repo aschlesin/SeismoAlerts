@@ -1591,3 +1591,18 @@ Detailed response of server:
 2026-11-17 20:24:10,858 - __main__ - INFO - ALERT SENT: Quality metric (238496.84) is is outside the normal range.
 2026-11-18 05:44:12,175 - __main__ - INFO - ALERT SENT: Quality metric (7354693.64) is is outside the normal range.
 2026-11-18 19:54:13,394 - __main__ - INFO - ALERT SENT: Quality metric (160834.21) is is outside the normal range.
+2026-11-19 05:45:12,215 - __main__ - ERROR - Execution failed: 'TimeoutError' object has no attribute 'splitlines'
+Traceback (most recent call last):
+  File "/home/runner/work/SeismoAlerts/SeismoAlerts/main.py", line 37, in KEMF_LED_Alert
+    st = client.get_waveforms(network='NV', station='KEMF', location='', channel='MHZ', starttime=starttime, endtime=starttime+3600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 872, in get_waveforms
+    data_stream = self._download(url, use_gzip=False)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1486, in _download
+    raise_on_error(code, data)
+  File "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages/obspy/clients/fdsn/client.py", line 1831, in raise_on_error
+    line for line in server_info.splitlines() if line)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TimeoutError' object has no attribute 'splitlines'
+2026-11-19 05:45:12,217 - __main__ - INFO - CRITICAL ERROR: 'TimeoutError' object has no attribute 'splitlines'
